@@ -1,5 +1,5 @@
 import Layer from './Layer'
-import './App.css'
+import './App.sass'
 import Cake from './Cake/Cake'
 import CakeBuilder from './CakeBuilder/CakeBuilder'
 import { useState } from 'react'
