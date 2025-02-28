@@ -16,10 +16,10 @@ const LayerBuilder: FC<LayerBuilderProps> = ({ layer, removeLayer }) => {
         <button onClick={() => removeLayer(id)}>Delete</button>
       </div>
 
-      <div>
-        <div>Color: {color}</div>
-        <div>Width: {width}px</div>
-        <div>Height: {height}px</div>
+      <div className="layer-info" key={layer.id}>
+        <div>Color: {layer.color}</div>
+        <div>Width: {layer.width}px</div>
+        <div>Height: {layer.height}px</div>
       </div>
     </div>
   )
