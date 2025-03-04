@@ -2,6 +2,7 @@ import Layer from "../Layer";
 import LayerBuilder from "./LayerBuilder";
 import LayerAdd from "./LayerAdd";
 import LayerForm from "./LayerForm";
+import { useState } from "react";
 
 interface CakeBuilderProps {
     layers: Layer[];
@@ -10,9 +11,14 @@ interface CakeBuilderProps {
 }
 
 const CakeBuilder: React.FC<CakeBuilderProps> = ({ layers, addLayer, removeLayer }) => {
+    const [isFormVisible, setIsFormVisible] = useState(false)
+    
     return (
         <div>
-            <LayerAdd addLayer = {addLayer} />
+            <LayerAdd setIsFormVisible={setIsFormVisible} />
+            {isFormVisible && (
+                <LayerForm addLayer={addLayer} closeForm={closeForm} />
+            )}
             {layers.map((layer) => (
                 <LayerBuilder key={layer.id} layer={layer} removeLayer={removeLayer} />
             )
