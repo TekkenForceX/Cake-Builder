@@ -12,6 +12,10 @@ interface CakeBuilderProps {
 
 const CakeBuilder: React.FC<CakeBuilderProps> = ({ layers, addLayer, removeLayer }) => {
     const [isFormVisible, setIsFormVisible] = useState(false)
+
+    const closeForm = () => {
+        setIsFormVisible(false)
+    }
     
     return (
         <div>
