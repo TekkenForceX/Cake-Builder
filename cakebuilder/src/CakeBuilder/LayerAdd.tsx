@@ -1,9 +1,16 @@
 //import Layer from "../Layer"
+import { FC } from "react"
 
-const LayerAdd = () => {
+interface Props {
+    setIsFormVisible: (isFormVisible: boolean) => void
+}
+
+const LayerAdd: FC<Props> = ({setIsFormVisible}) => {
     return (
         <div>
-            <h3>This will be our Layer Add button -- when clicked, it displays LayerForm</h3>
+            <button onClick={
+                () => setIsFormVisible(true)
+            }>Add A Layer</button>
         </div>
     )
 }

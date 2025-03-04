@@ -1,6 +1,6 @@
 
 interface Layer {
-
+    id: number
     height: number
     width: number
     color: string
