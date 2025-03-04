@@ -3,7 +3,7 @@ import Layer from "../Layer"
 
 interface LayerFormProps {
     addLayer: (layer: Layer) => void;
-    closeForm: (isFormVisible: boolean) => void;
+    closeForm: () => void;
 }
 
 const LayerForm: React.FC<LayerFormProps> = ({ addLayer, closeForm }) => {

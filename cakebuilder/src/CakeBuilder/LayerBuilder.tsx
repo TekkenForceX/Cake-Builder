@@ -4,7 +4,7 @@ import { FC } from "react"
 
 interface LayerBuilderProps {
   layer: Layer
-  removeLayer: (id: number) => void
+  removeLayer: (layer: Layer) => void
 }
 
 const LayerBuilder: FC<LayerBuilderProps> = ({ layer, removeLayer }) => {
@@ -14,7 +14,7 @@ const LayerBuilder: FC<LayerBuilderProps> = ({ layer, removeLayer }) => {
     <div>
       <div>
         <h3>Layer Information</h3>
-        <button onClick={() => removeLayer(id)}>Delete</button>
+        <button onClick={() => removeLayer(layer)}>Delete</button>
       </div>
 
       <div className="layer-info" key={layer.id}>

@@ -6,12 +6,16 @@ import { useState } from "react";
 
 interface CakeBuilderProps {
     layers: Layer[];
-    addLayer: (layer: Layer) => void;
-    removeLayer: (id: number) => void;
+    addLayer: (newLayer: Layer) => void;
+    removeLayer: (layer: Layer) => void;
 }
 
 const CakeBuilder: React.FC<CakeBuilderProps> = ({ layers, addLayer, removeLayer }) => {
     const [isFormVisible, setIsFormVisible] = useState(false)
+
+    const closeForm = () => {
+        setIsFormVisible(false)
+    }
     
     return (
         <div>
