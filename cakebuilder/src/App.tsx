@@ -7,17 +7,17 @@ import { useState } from 'react'
 const App = () => {
   const [layers, setLayers] = useState<Layer[]>([])
 
-  const addLayer = () => {
-
+  const addLayer = (newLayer: Layer) => {
+    setLayers((ls) => [...ls, newLayer])
   }
 
-  const removeLayer = () => {
-
+  const removeLayer = (layer: Layer) => {
+    setLayers(layers.filter(l => l.id !== layer.id))
   }
 
   return (
     <>
-      <CakeBuilder {...layers} addLayer={addLayer} removeLayer={removeLayer} />
+      <CakeBuilder layers={layers} addLayer={addLayer} removeLayer={removeLayer} />
       <Cake layers={layers} />
     </>
   )
