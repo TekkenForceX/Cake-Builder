@@ -15,7 +15,7 @@ const LayerForm: React.FC<LayerFormProps> = ({ addLayer, closeForm }) => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         addLayer({id: Date.now(), height, width, color });
-        closeForm(true);
+        closeForm();
     }
 
     return (
@@ -28,6 +28,8 @@ const LayerForm: React.FC<LayerFormProps> = ({ addLayer, closeForm }) => {
 
         <label>Color:</label>
         <input type="color" value={color} onChange={(e) => setColor(e.target.value)} />
+
+        <button type="submit">Save</button>
        </form>
     )
 }

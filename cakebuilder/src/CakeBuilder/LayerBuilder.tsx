@@ -8,7 +8,6 @@ interface LayerBuilderProps {
 }
 
 const LayerBuilder: FC<LayerBuilderProps> = ({ layer, removeLayer }) => {
-  const { height, width, color, id } = layer
 
   return (
     <div>
