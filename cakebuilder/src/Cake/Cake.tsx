@@ -1,13 +1,17 @@
-//import Layer from "../Layer"
+import Layer from "../Layer"
 import CakeLayer from "./CakeLayer"
+import { FC } from "react"
 
-const Cake = () => {
+interface CakeProps {
+    layers: Layer[]
+}
+
+const Cake: FC<CakeProps> = ({ layers }) => {
     return (
-        <div>
-            <h1>This will be our Cake</h1>
-            <CakeLayer />
-            <CakeLayer />
-            <CakeLayer />
+        <div className="cake">
+            {layers.map((layer) => (
+                <CakeLayer key={layer.id} layer={layer}/>
+            ))}
         </div>
     )
 }
