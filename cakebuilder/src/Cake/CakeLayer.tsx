@@ -3,21 +3,21 @@ import { FC } from "react"
 
 interface CakeLayerProps {
     layer: Layer
+    height: number
+    width: number 
+    color: string
 }
 
-const CakeLayer: FC<CakeLayerProps> = ({layer}) => {
+const CakeLayer: FC<CakeLayerProps> = ({layer, height, width, color}) => {
+    const styles={
+        height: layer.height * 50,
+        width: layer.width * 50,
+        border: "1px solid black",
+        backgroundColor: layer.color
+    }
+    
     return (
-        <div 
-            className="cake-layer"
-            style={{
-                height: `${layer.height}px`,
-                width: `${layer.width}px`,
-                backgroundColor: `${layer.color}px`
-            }}>
-                <p>Height: {layer.height}</p>
-                <p>Width: {layer.width}</p>
-                <p>Color: {layer.color}</p>
-        </div>
+        <div className="cake-layer"style={styles}></div>
     )
 }
 
