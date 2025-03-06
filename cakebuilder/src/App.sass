@@ -8,12 +8,16 @@ body
     background: repeating-linear-gradient(45deg, #27a076, #35da93 100px, #27a069 200px)
     display: block
     color: #151b1d
+    display: flex
+    justify-content: center
+
     height: 100%
 
 .cake-builder
     //border: 3px solid blue
     width: 100%
     height: 50%
+
 
 .cake
     width: 100%
@@ -26,6 +30,79 @@ body
 .cake-layer
     margin: 0 auto
     border-radius: 10px
+
+.layer-form 
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem
+  padding: 0.15rem;
+  border: 2px solid #ddd;
+  background-color: #f9f9f9;
+  width: 100%;
+  height: 100%;
+  align-items: center
+  justify-content: center
+  margin-top: 10px
+
+  .layer-form span 
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  
+
+  label 
+    font-weight: bold;
+    font-size: 0.9rem;
+  
+
+  input 
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+
+    &:focus 
+      border-color: #007bff;
+      outline: none;
+    
+  
+
+  .color-picker 
+    width: 25%;
+    height: 40px;
+    cursor: pointer;
+  
+
+  .button-group 
+    display: flex;
+    gap: 0.5rem;
+    
+    button 
+      flex: 1;
+      padding: 0.7rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+
+      &.save 
+        background-color: #28a745;
+        color: white;
+
+        &:hover 
+          background-color: #218838;
+        
+      
+
+      &.cancel 
+        background-color: #dc3545;
+        color: white;
+
+        &:hover 
+          background-color: #c82333;
+        
+      
+    
+ 
 
 .layer-builder
     text-align: left

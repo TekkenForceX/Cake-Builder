@@ -1,5 +1,6 @@
 import { use, useState } from "react";
 import Layer from "../Layer"
+import '/src/App.sass'
 
 interface LayerFormProps {
     addLayer: (layer: Layer) => void;
@@ -19,15 +20,17 @@ const LayerForm: React.FC<LayerFormProps> = ({ addLayer, closeForm }) => {
     }
 
     return (
-       <form onSubmit={handleSubmit}>
+       <form onSubmit={handleSubmit} className="layer-form">
         <label>Height (0.5 - 10):</label>
-        <input type="number" min="0.5" max="10" step="0.5" value={height} onChange={(e) => setHeight(parseFloat(e.target.value))} />
+        <input type="range" min="0.5" max="10" step="0.5" value={height} onChange={(e) => setHeight(parseFloat(e.target.value))} />
+        <span>{height}</span>
         
         <label>Width (1 - 10):</label>
-        <input type="number" min="1" max="10" step="1" value={width} onChange={(e) => setWidth(parseFloat(e.target.value))} /> 
+        <input type="range" min="1" max="10" step="1" value={width} onChange={(e) => setWidth(parseFloat(e.target.value))} /> 
+        <span>{width}</span>
 
         <label>Color:</label>
-        <input type="color" value={color} onChange={(e) => setColor(e.target.value)} />
+        <input type="color" className="color-picker" value={color} onChange={(e) => setColor(e.target.value)} />
 
         <button type="submit">Save</button>
        </form>
