@@ -17,19 +17,23 @@ const CakeBuilder: React.FC<CakeBuilderProps> = ({
 }) => {
   const [isFormVisible, setIsFormVisible] = useState(false)
 
-  const closeForm = () => {
-    setIsFormVisible(false)
-  }
 
-  return (
-    <div className='cake-builder'>
-      <LayerAdd setIsFormVisible={setIsFormVisible} />
-      {isFormVisible && <LayerForm addLayer={addLayer} closeForm={closeForm} />}
-      {layers.map(layer => (
-        <LayerBuilder key={layer.id} layer={layer} removeLayer={removeLayer} />
-      ))}
-    </div>
-  )
+    const closeForm = () => {
+        setIsFormVisible(false)
+    }
+    
+    return (
+        <div className="cake-builder">
+            <LayerAdd setIsFormVisible={setIsFormVisible} />
+            {isFormVisible && (
+                <LayerForm addLayer={addLayer} closeForm={closeForm} />
+            )}
+            {layers.map((layer) => (
+                <LayerBuilder key={layer.id} layer={layer} removeLayer={removeLayer} />
+            )
+        )}
+        </div>
+    )
 }
 
 export default CakeBuilder

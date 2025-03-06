@@ -20,6 +20,7 @@ const App = () => {
       <CakeBuilder layers={layers} addLayer={addLayer} removeLayer={removeLayer} />
       <Cake layers={layers} />
     </div>
+
   )
 }
 
