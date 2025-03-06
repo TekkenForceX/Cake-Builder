@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap')
+
 #root 
     max-width: 1280px
     margin: 0 auto
@@ -5,48 +7,45 @@
     text-align: center
     
 body 
-    background: repeating-linear-gradient(45deg, #27a076, #35da93 100px, #27a069 200px)
+    background: repeating-linear-gradient(45deg, #27a076, #91f1c7 100px, #27a069 200px)
+    //background: linear-gradient(to top, #3ef0c3, #f15627, #18e1f3)
     display: block
-    color: #151b1d
-    height: 100vh
-    //put elements on top of each other
+    color: black
+    font-family: Open sans, sans serif
+
+.header
+    margin: 0 auto
+    & h1
+        font-family: Marck Script, sans serif
+        font-size: 70px
+    & h3 
+        font-size: 18px
 
 .app-container
     display: flex
-    flex-direction: column
-    width: 100%
-    height: 100% 
-    display: flex
+    flex-direction: column 
     justify-content: center
-
-    height: 100%
-
-.cake-builder
-    //border: 3px solid blue
     width: 100%
-    height: 50%
-
-
+    height: 100%
 
 .cake
     width: 100%
-    height: 80%
-    border: 3px solid red
+    height: 45%
     padding: 30px 0px
     order: 1
-
+    display: flex
+    flex-direction: column-reverse
+    align-items: center
 
 .cake-builder  
     width: 100%
-    height: 80%
-    border: 3px solid blue
+    height: 50%
     padding: 30px 0px
     order: 2
 
-
 button
-    background-color: purple
-    color: yellow
+    background-color: black
+    color: white
     width: 25%
     height: 7%
     font-size: 14
@@ -54,103 +53,71 @@ button
     padding: 2%
     alignment: center
     white-space: nowrap
-    
     &:hover 
-        background-color: black
-        color: white
-   
-    height: 50%
-    //border: 3px solid red
-    padding: 30px 0px
-    display: flex
-    flex-direction: column
+        background-color: grey
 
 .cake-layer
     margin: 0 auto
-    border-radius: 10px
+    border-radius: 15%
 
 .layer-form 
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem
-  padding: 0.15rem;
-  border: 2px solid #ddd;
-  background-color: #f9f9f9;
-  width: 100%;
-  height: 100%;
-  align-items: center
-  justify-content: center
-  margin-top: 10px
-
-  .layer-form span 
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-  
-
-  label 
-    font-weight: bold;
-    font-size: 0.9rem;
-  
-
-  input 
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-
-    &:focus 
-      border-color: #007bff;
-      outline: none;
-    
-  
-
-  .color-picker 
-    width: 25%;
-    height: 40px;
-    cursor: pointer;
-  
-
-  .button-group 
-    display: flex;
-    gap: 0.5rem;
-    
-    button 
-      flex: 1;
-      padding: 0.7rem;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.2s ease-in-out;
-
-      &.save 
-        background-color: #28a745;
-        color: white;
-
-        &:hover 
-          background-color: #218838;
+    width: 100%
+    height: 350px
+    margin-top: 10px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: 0.15rem
+    border: 2px solid #ddd
+    border-radius: 20px
+    background-color: #f9f9f9
+    & span 
+        font-size: 1.2rem
+        font-weight: bold
+        transition: color 0.3s ease-in-out
+    & label 
+        font-weight: bold
+        font-size: 0.9rem
+    & input 
+        padding: 0.5rem
+        border: 1px solid #ccc
+        border-radius: 5px
+        font-size: 1rem
+        &:focus 
+            border-color: #007bff
+            outline: none
+    & .color-picker 
+        width: 25%
+        height: 40px
+        cursor: pointer
+    & .form-buttons
+        padding: 0
+        margin-top: 20px
+        cursor: pointer
+        transition: background 0.2s ease-in-out
+        display: flex
+        flex-direction: row
+        justify-content: space-between 
+        font-size: 14px
+        & .save-button
+            height: 100%
+            width: 70px
+        & .cancel-button
+            height: 100%
+            width: 70px
         
-      
-
-      &.cancel 
-        background-color: #dc3545;
-        color: white;
-
-        &:hover 
-          background-color: #c82333;
-        
-      
-    
- 
-
 .layer-builder
     text-align: left
     margin-top: 30px
+    width: 90%
     & .layer-info
         border: 2px solid white
         border-radius: 20px
         display: flex
-        justify-content: space-between
-        padding: 10px
+        justify-content: space-evenly
+        align-items: center
+        padding: 5px
         background: white
         & .trash-icon
             background: transparent 
@@ -164,11 +131,12 @@ button
             &:hover 
                 fill: #000000
 
-        @media screen and (min-width: 768px)
+@media screen and (min-width: 768px)
     .app-container
         display: flex
         flex-direction: row
-        align-items: top
+        align-items: center
+        height: 100%
 
     .cake
         width: 50%
