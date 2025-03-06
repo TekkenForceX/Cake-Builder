@@ -8,13 +8,64 @@ body
     background: repeating-linear-gradient(45deg, #27a076, #35da93 100px, #27a069 200px)
     display: block
     color: #151b1d
+    height: 100vh
+    //put elements on top of each other
+
+.app-container
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: 100% 
+
 
 .cake
-    width: 45%
+    width: 100%
     height: 80%
+    border: 3px solid red
+    padding: 30px 0px
+    order: 1
+
+
+.cake-builder  
+    width: 100%
+    height: 80%
+    border: 3px solid blue
+    padding: 30px 0px
+    order: 2
 
 .cake-layer
     //display: flex
     //flex-direction: column
     //align-items: center
     position: relative
+
+button
+    background-color: purple
+    color: yellow
+    width: 25%
+    height: 7%
+    font-size: 14
+    margin: 2%
+    padding: 2%
+    alignment: center
+    white-space: nowrap
+    
+    &:hover 
+        background-color: black
+        color: white
+   
+@media screen and (min-width: 768px)
+    .app-container
+        display: flex
+        flex-direction: row
+        align-items: top
+
+    .cake
+        width: 50%
+        height: 100%
+        order: 2
+
+    .cake-builder
+        width: 50%
+        height: 100%
+        order: 1
