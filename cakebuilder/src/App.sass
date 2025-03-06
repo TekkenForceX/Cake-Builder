@@ -11,15 +11,25 @@ body
     display: flex
     justify-content: center
 
+    height: 100%
+
+.cake-builder
+    //border: 3px solid blue
+    width: 100%
+    height: 50%
+
+
 .cake
-    width: 45%
-    height: 80%
+    width: 100%
+    height: 50%
+    //border: 3px solid red
+    padding: 30px 0px
+    display: flex
+    flex-direction: column
 
 .cake-layer
-    //display: flex
-    //flex-direction: column
-    //align-items: center
-    position: relative
+    margin: 0 auto
+    border-radius: 10px
 
 .layer-form 
   display: flex;
@@ -92,5 +102,26 @@ body
         
       
     
-  
+ 
 
+.layer-builder
+    text-align: left
+    margin-top: 30px
+    & .layer-info
+        border: 2px solid white
+        border-radius: 20px
+        display: flex
+        justify-content: space-between
+        padding: 10px
+        background: white
+        & .trash-icon
+            background: transparent 
+            padding: 0
+            border: none
+            cursor: pointer
+        & .trash-icon svg
+            width: 18px
+            height: 18px
+            fill: #656363
+            &:hover 
+                fill: #000000

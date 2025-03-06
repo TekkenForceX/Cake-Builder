@@ -18,7 +18,7 @@ const CakeBuilder: React.FC<CakeBuilderProps> = ({ layers, addLayer, removeLayer
     }
     
     return (
-        <div>
+        <div className="cake-builder">
             <LayerAdd setIsFormVisible={setIsFormVisible} />
             {isFormVisible && (
                 <LayerForm addLayer={addLayer} closeForm={closeForm} />
