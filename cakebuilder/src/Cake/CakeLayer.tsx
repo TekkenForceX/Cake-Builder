@@ -3,12 +3,9 @@ import { FC } from "react"
 
 interface CakeLayerProps {
     layer: Layer
-    height: number
-    width: number 
-    color: string
 }
 
-const CakeLayer: FC<CakeLayerProps> = ({layer, height, width, color}) => {
+const CakeLayer: FC<CakeLayerProps> = ({layer}) => {
     const styles={
         height: layer.height * 50,
         width: layer.width * 50,
@@ -17,7 +14,7 @@ const CakeLayer: FC<CakeLayerProps> = ({layer, height, width, color}) => {
     }
     
     return (
-        <div className="cake-layer"style={styles}></div>
+        <div className="cake-layer" style={styles}></div>
     )
 }
 

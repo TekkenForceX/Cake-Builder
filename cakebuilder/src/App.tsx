@@ -17,8 +17,8 @@ const App = () => {
 
   return (
     <>
-      <CakeBuilder layers={layers} addLayer={addLayer} removeLayer={removeLayer} />
       <Cake layers={layers} />
+      <CakeBuilder layers={layers} addLayer={addLayer} removeLayer={removeLayer} />
     </>
   )
 }
