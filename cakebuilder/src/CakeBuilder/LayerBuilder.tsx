@@ -8,9 +8,10 @@ interface LayerBuilderProps {
 
 const LayerBuilder: FC<LayerBuilderProps> = ({ layer, removeLayer }) => {
   const colorStyles = {
-    height: layer.height * 5, 
-    width: layer.width * 5,
-    backgroundColor: layer.color
+    height: layer.height * 10, 
+    width: layer.width * 10,
+    backgroundColor: layer.color,
+    border: "1px solid grey"
   }
 
   const TrashCan = () => (

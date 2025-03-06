@@ -16,11 +16,16 @@ const App = () => {
   }
 
   return (
-    <div className='app-container'>
-      <CakeBuilder layers={layers} addLayer={addLayer} removeLayer={removeLayer} />
-      <Cake layers={layers} />
-    </div>
-
+    <>
+      <div className="header">
+        <h1>Cake Builder Pro</h1>
+        <h3>Build your own custom <b><i>tier-iffic</i></b> cake for any special event!</h3>
+      </div>
+      <div className='app-container'>
+        <CakeBuilder layers={layers} addLayer={addLayer} removeLayer={removeLayer} />
+        <Cake layers={layers} />
+      </div>
+    </>
   )
 }
 

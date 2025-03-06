@@ -32,7 +32,10 @@ const LayerForm: React.FC<LayerFormProps> = ({ addLayer, closeForm }) => {
         <label>Color:</label>
         <input type="color" className="color-picker" value={color} onChange={(e) => setColor(e.target.value)} />
 
-        <button type="submit">Save</button>
+        <div className="form-buttons">
+            <button type="submit" className="save-button">Save</button>
+            <button onClick={closeForm} className="cancel-button">Cancel</button>
+        </div>
        </form>
     )
 }

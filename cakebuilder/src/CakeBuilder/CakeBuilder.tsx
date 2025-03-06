@@ -28,7 +28,7 @@ const CakeBuilder: React.FC<CakeBuilderProps> = ({
             {isFormVisible && (
                 <LayerForm addLayer={addLayer} closeForm={closeForm} />
             )}
-            {layers.map((layer) => (
+            {[...layers].reverse().map((layer) => (
                 <LayerBuilder key={layer.id} layer={layer} removeLayer={removeLayer} />
             )
         )}
